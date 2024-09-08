@@ -1,0 +1,26 @@
+{
+  "version": "2.2.0",
+  "summary": {
+    "title": "Security Threath Dragon",
+    "owner": "Niels Schmitz",
+    "description": "Werkplaats 4 project. In dit project moesten wij een webapplicatie maken voor Hogeschool Rotterdam waar leerlingen opdrachten konden inleveren en leraren dit gemakkelijk konden checken.",
+    "id": 0
+  },
+  "detail": {
+    "contributors": [],
+    "diagrams": [
+      {
+        "id": 0,
+        "title": "WebApp",
+        "diagramType": "STRIDE",
+        "placeholder": "New STRIDE diagram description",
+        "thumbnail": "./public/content/images/thumbnail.stride.jpg",
+        "version": "2.2.0",
+        "cells": []
+      }
+    ],
+    "diagramTop": 1,
+    "reviewer": "Niels Schmitz",
+    "threatTop": 0
+  }
+}
