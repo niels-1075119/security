@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import BaseLayout from './base';
 import '../static/css/auth.css';
 import { useNavigate, useLocation } from 'react-router-dom';
+import bcrypt from 'bcryptjs'; // Installeer bcrypt
 
 function AuthPage() {
   const [isLogin, setIsLogin] = useState(true);
@@ -20,6 +21,15 @@ function AuthPage() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+
+    if (!password) {
+      setMessage('Password is required');
+      return;
+    }
+
+    const saltRounds = 10;
+    const hashedPassword = await bcrypt.hash(password, saltRounds); // Hash het wachtwoord
+
     const url = isLogin
       ? 'http://localhost:5000/auth/login'
       : 'http://localhost:5000/insert_user';
@@ -32,7 +42,7 @@ function AuthPage() {
         },
         body: JSON.stringify({
           email,
-          password,
+          password: hashedPassword, // Stuur het gehashte wachtwoord door
         }),
       });
 
